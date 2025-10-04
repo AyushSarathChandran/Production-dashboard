@@ -49,10 +49,17 @@ body {
   border-bottom: 1px solid var(--border-color);
 }
 
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
 .header h1 {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin: 0;
 }
 
 .view-toggles {
@@ -91,28 +98,24 @@ body {
   scroll-snap-type: x mandatory;
 }
 
-/* Custom Scrollbar */
 .scroll-container::-webkit-scrollbar {
   height: 8px;
 }
-
 .scroll-container::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 10px;
 }
-
 .scroll-container::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 10px;
 }
-
 .scroll-container::-webkit-scrollbar-thumb:hover {
   background: #aaa;
 }
 
 /* --- Day & Week Cards --- */
 .day-card, .week-card {
-  flex: 0 0 280px; /* Fixed width */
+  flex: 0 0 280px;
   background-color: var(--background-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
@@ -134,33 +137,26 @@ body {
   align-items: center;
   margin-bottom: 12px;
 }
-
 .card-header h3 {
   font-size: 18px;
   font-weight: 700;
   color: var(--accent-blue);
 }
-
 .card-header span {
   font-size: 13px;
   color: var(--text-secondary);
 }
 
-.card-info {
-  font-size: 14px;
-}
-
 .card-info p {
   margin-bottom: 8px;
+  font-size: 14px;
   color: var(--text-primary);
 }
-
 .card-info strong {
   color: var(--text-secondary);
   font-weight: 600;
   margin-right: 6px;
 }
-
 .info-badge {
   background-color: var(--accent-orange);
   color: white;
@@ -170,12 +166,10 @@ body {
   font-weight: 700;
 }
 
-
-/* --- Detail View (Call Sheet & Week Sheet) --- */
+/* --- Detail Views --- */
 .detail-view {
   padding: 24px;
 }
-
 .back-btn {
   display: inline-flex;
   align-items: center;
@@ -190,21 +184,12 @@ body {
   cursor: pointer;
   transition: background-color 0.2s;
 }
-
 .back-btn:hover {
   background-color: #f2f2f2;
 }
-
 .back-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-
-.detail-header {
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 16px;
-  margin-bottom: 24px;
 }
 
 .detail-header h2 {
@@ -212,7 +197,6 @@ body {
   font-weight: 800;
   color: var(--accent-blue);
 }
-
 .detail-header p {
   font-size: 16px;
   color: var(--text-secondary);
@@ -224,14 +208,12 @@ body {
   gap: 24px;
   margin-bottom: 32px;
 }
-
 .detail-box {
   background-color: #f9f9f9;
   border: 1px solid var(--border-color);
   padding: 16px;
   border-radius: 8px;
 }
-
 .detail-box h4 {
   font-size: 13px;
   font-weight: 700;
@@ -239,15 +221,9 @@ body {
   color: var(--text-secondary);
   margin-bottom: 8px;
 }
-
 .detail-box p {
   font-size: 16px;
   font-weight: 600;
-}
-
-
-.detail-section {
-  margin-bottom: 32px;
 }
 
 .detail-section h3 {
@@ -258,7 +234,7 @@ body {
   padding-bottom: 8px;
 }
 
-/* --- Scheduled Scenes List --- */
+/* --- Scene & Cast Lists --- */
 .scene-list {
   display: flex;
   flex-direction: column;
@@ -270,57 +246,33 @@ body {
   padding: 12px 16px;
   border-radius: 4px;
 }
-.scene-item p {
-  margin: 0;
-}
 .scene-item-header {
   font-weight: 700;
-  font-size: 16px;
-}
-.scene-item-cast {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-top: 4px;
 }
 
-/* --- Cast Call Table --- */
 .cast-call-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
 }
-
 .cast-call-table th, .cast-call-table td {
   text-align: left;
   padding: 12px;
   border-bottom: 1px solid var(--border-color);
 }
-
 .cast-call-table th {
   background-color: #f9f9f9;
-  font-weight: 700;
-  color: var(--text-secondary);
 }
-
-.cast-call-table td .status-badge {
+.status-badge {
   padding: 4px 8px;
   border-radius: 12px;
   font-weight: 600;
   font-size: 12px;
   color: white;
 }
-
-.status-wo {
-  background-color: var(--accent-green);
-}
-
-.status-sw {
-  background-color: var(--accent-orange);
-}
-
-.status-h {
-  background-color: #dc3545;
-}
+.status-wo { background-color: var(--accent-green); }
+.status-sw { background-color: var(--accent-orange); }
+.status-h { background-color: #dc3545; }
 
 /* --- Detailed Week Sheet Specifics --- */
 .week-sheet-day-cards {
@@ -329,55 +281,39 @@ body {
   gap: 16px;
 }
 
-/* --- NEW: Calendar View Styles --- */
+/* --- Calendar View Styles --- */
 .calendar-view-container {
   padding: 24px;
   overflow-x: auto;
 }
-
 .calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
 }
-
 .calendar-header h2 {
   font-size: 22px;
-  font-weight: 700;
 }
-
-.calendar-nav {
-  display: flex;
-  gap: 8px;
-}
-.calendar-nav .back-btn { /* Re-use back-btn style but remove margin */
+.calendar-nav .back-btn {
   margin-bottom: 0;
 }
-
 .calendar-grid {
   display: grid;
-  grid-template-columns: 60px repeat(7, 1fr); /* Time axis + 7 days */
+  grid-template-columns: 60px repeat(7, 1fr);
   min-width: 1200px;
 }
-
 .time-axis, .day-column {
   display: grid;
-  grid-template-rows: 60px repeat(34, 25px); /* Header + 17 hours * 2 (for half hours) */
+  grid-template-rows: 60px repeat(34, 25px);
   position: relative;
 }
-
 .time-axis {
   border-right: 1px solid var(--border-color);
 }
-
 .day-column {
   border-right: 1px solid var(--border-color);
 }
-.day-column:last-child {
-  border-right: none;
-}
-
 .day-header-cell {
   grid-row: 1 / 2;
   text-align: center;
@@ -391,39 +327,21 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.day-header-cell strong {
-  font-size: 14px;
-  text-transform: uppercase;
-}
-.day-header-cell span {
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-
 .time-slot {
   text-align: right;
   padding-right: 8px;
   font-size: 12px;
   color: var(--text-secondary);
-  grid-column: 1 / 2;
   height: 50px;
   position: relative;
-  top: -8px; /* Center align with the grid line */
+  top: -8px;
 }
-.time-slot.half-hour {
-  height: 0;
-  visibility: hidden;
-}
-
-
 .grid-row {
   border-bottom: 1px solid #f0f0f0;
 }
 .grid-row.half-hour {
   border-bottom-style: dotted;
 }
-
 .scene-block {
   position: absolute;
   left: 4px;
@@ -436,23 +354,36 @@ body {
   overflow: hidden;
   font-size: 12px;
   z-index: 5;
-  cursor: pointer;
 }
-
 .scene-block.lunch-block {
   background-color: rgba(245, 158, 11, 0.85);
   border-color: var(--accent-orange);
 }
-
 .scene-block-title {
   font-weight: 700;
-  white-space: nowrap;
 }
 
-.scene-block-desc {
-  font-size: 11px;
-  opacity: 0.9;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+/* --- Upload Button & Loading Styles --- */
+.upload-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--accent-green);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.upload-btn:hover {
+  background-color: #2b9244;
+}
+.loading-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-secondary);
 }
