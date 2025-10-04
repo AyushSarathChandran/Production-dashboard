@@ -195,6 +195,12 @@ body {
   background-color: #f2f2f2;
 }
 
+.back-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
 .detail-header {
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 16px;
@@ -321,4 +327,132 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 16px;
+}
+
+/* --- NEW: Calendar View Styles --- */
+.calendar-view-container {
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.calendar-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.calendar-nav {
+  display: flex;
+  gap: 8px;
+}
+.calendar-nav .back-btn { /* Re-use back-btn style but remove margin */
+  margin-bottom: 0;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 60px repeat(7, 1fr); /* Time axis + 7 days */
+  min-width: 1200px;
+}
+
+.time-axis, .day-column {
+  display: grid;
+  grid-template-rows: 60px repeat(34, 25px); /* Header + 17 hours * 2 (for half hours) */
+  position: relative;
+}
+
+.time-axis {
+  border-right: 1px solid var(--border-color);
+}
+
+.day-column {
+  border-right: 1px solid var(--border-color);
+}
+.day-column:last-child {
+  border-right: none;
+}
+
+.day-header-cell {
+  grid-row: 1 / 2;
+  text-align: center;
+  padding: 8px;
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.day-header-cell strong {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.day-header-cell span {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+
+.time-slot {
+  text-align: right;
+  padding-right: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  grid-column: 1 / 2;
+  height: 50px;
+  position: relative;
+  top: -8px; /* Center align with the grid line */
+}
+.time-slot.half-hour {
+  height: 0;
+  visibility: hidden;
+}
+
+
+.grid-row {
+  border-bottom: 1px solid #f0f0f0;
+}
+.grid-row.half-hour {
+  border-bottom-style: dotted;
+}
+
+.scene-block {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  background-color: rgba(8, 102, 255, 0.85);
+  border: 1px solid var(--accent-blue);
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  overflow: hidden;
+  font-size: 12px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.scene-block.lunch-block {
+  background-color: rgba(245, 158, 11, 0.85);
+  border-color: var(--accent-orange);
+}
+
+.scene-block-title {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.scene-block-desc {
+  font-size: 11px;
+  opacity: 0.9;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

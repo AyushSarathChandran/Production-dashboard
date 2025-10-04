@@ -15,8 +15,9 @@ export const scheduleData = [
     sunset: '18:30',
     notes: "Establishing shots of Kurukkanmoola. Focus on atmosphere.",
     scenes: [
-      { sceneNumber: '3', description: 'EXT. KURUKKANMOOLA JUNCTION - DAY. Kochappi and the old man watch TV.', cast: ['Kochappi', 'Vriddhan 1'] },
-      { sceneNumber: '4', description: 'EXT. JAISON STITCHING CENTER - EVENING. Shibu looks at the tailor shop.', cast: ['Shibu', 'Varkey', 'Dasan'] },
+      { sceneNumber: '3', description: 'EXT. KURUKKANMOOLA JUNCTION - DAY. Kochappi and the old man watch TV.', cast: ['Kochappi', 'Vriddhan 1'], startTime: '08:00', endTime: '11:30' },
+      { sceneNumber: 'LUNCH', description: 'Lunch Break', cast: [], startTime: '12:00', endTime: '13:00' },
+      { sceneNumber: '4', description: 'EXT. JAISON STITCHING CENTER - EVENING. Shibu looks at the tailor shop.', cast: ['Shibu', 'Varkey', 'Dasan'], startTime: '14:00', endTime: '18:00' },
     ],
     castCalls: [
       { character: 'Shibu', actor: 'Guru Somasundaram', status: 'W', hmw: '06:00', onSet: '07:30' },
@@ -38,8 +39,9 @@ export const scheduleData = [
     sunset: '18:30',
     notes: "All action is inside and around the tea shop. Bincy's introduction.",
     scenes: [
-      { sceneNumber: '5', description: 'INT. THUSHAR TEA SHOP - EVENING. SI Saajan watches Bincy at the bus stop.', cast: ['Saajan', 'Shinoj', 'Anto', 'Bincy', 'Paily'] },
-      { sceneNumber: '5A', description: 'INT. TEA SHOP. Shibu enters looking for his wallet, gets scolded by Paily.', cast: ['Shibu', 'Paily', 'Saajan', 'Shinoj'] },
+      { sceneNumber: '5', description: 'INT. THUSHAR TEA SHOP - EVENING. SI Saajan watches Bincy at the bus stop.', cast: ['Saajan', 'Shinoj', 'Anto', 'Bincy', 'Paily'], startTime: '09:00', endTime: '12:30' },
+      { sceneNumber: 'LUNCH', description: 'Lunch Break', cast: [], startTime: '13:00', endTime: '14:00' },
+      { sceneNumber: '5A', description: 'INT. TEA SHOP. Shibu enters looking for his wallet.', cast: ['Shibu', 'Paily', 'Saajan', 'Shinoj'], startTime: '14:30', endTime: '19:00' },
     ],
     castCalls: [
       { character: 'Saajan', actor: 'Baiju Santhosh', status: 'W', hmw: '07:00', onSet: '08:30' },
@@ -62,8 +64,9 @@ export const scheduleData = [
     sunset: '18:29',
     notes: "Jaison's stylish entry sequence. Need drone for wide shots of the river.",
     scenes: [
-      { sceneNumber: '6', description: 'EXT. FERRY - EVENING. Jaison makes a grand entrance on the ferry.', cast: ['Jaison', 'Boatman', 'Extras'] },
-      { sceneNumber: '6A', description: 'EXT. JUNCTION - EVENING. Jaison gets his cycle and rides towards the bus stop.', cast: ['Jaison', 'Bincy'] },
+      { sceneNumber: '6', description: 'EXT. FERRY - EVENING. Jaison makes a grand entrance on the ferry.', cast: ['Jaison', 'Boatman', 'Extras'], startTime: '07:00', endTime: '12:00' },
+      { sceneNumber: 'LUNCH', description: 'Lunch Break', cast: [], startTime: '12:30', endTime: '13:30' },
+      { sceneNumber: '6A', description: 'EXT. JUNCTION - EVENING. Jaison gets his cycle and rides towards the bus stop.', cast: ['Jaison', 'Bincy'], startTime: '14:00', endTime: '17:30' },
     ],
     castCalls: [
       { character: 'Jaison', actor: 'Tovino Thomas', status: 'W', hmw: '05:00', onSet: '06:30' },
@@ -84,15 +87,12 @@ export const scheduleData = [
     sunset: '18:28',
     notes: "Night sequence. The confrontation between Saajan and Jaison.",
     scenes: [
-      { sceneNumber: '6B', description: 'EXT. BUS STOP - NIGHT. Saajan confronts and slaps Jaison in front of Bincy.', cast: ['Jaison', 'Saajan', 'Bincy', 'Shinoj', 'Kannappan', 'Varkey'] },
+      { sceneNumber: '6B', description: 'EXT. BUS STOP - NIGHT. Saajan confronts and slaps Jaison.', cast: ['Jaison', 'Saajan', 'Bincy'], startTime: '17:00', endTime: '21:30' },
     ],
     castCalls: [
       { character: 'Jaison', actor: 'Tovino Thomas', status: 'W', hmw: '15:00', onSet: '16:30' },
       { character: 'Saajan', actor: 'Baiju Santhosh', status: 'W', hmw: '15:00', onSet: '16:30' },
       { character: 'Bincy', actor: 'Sneha Babu', status: 'W', hmw: '15:30', onSet: '17:00' },
-      { character: 'Shinoj', actor: 'Rajesh Madhavan', status: 'W', hmw: '15:00', onSet: '16:30' },
-      { character: 'Kannappan', actor: 'Gibin Gopinath', status: 'W', hmw: '16:00', onSet: '17:00' },
-      { character: 'Varkey', actor: 'P. Balachandran', status: 'W', hmw: '16:00', onSet: '17:00' },
     ]
   },
   {
@@ -108,14 +108,12 @@ export const scheduleData = [
     sunset: '18:28',
     notes: "Christmas carol sequence. Jaison's emotional scene in his room.",
     scenes: [
-      { sceneNumber: '9', description: 'EXT. JAISON\'S HOUSE - NIGHT. Jaison is upset, his family watches him.', cast: ['Jaison', 'Varkey', 'Jesmi', 'Josemon', 'Appumol'] },
-      { sceneNumber: '9A', description: 'INT. JAISON\'S ROOM - NIGHT. Jaison drinks and gets angry, watches the carol singers.', cast: ['Jaison'] },
+       { sceneNumber: '9', description: 'EXT. JAISON\'S HOUSE - NIGHT. Family interaction.', cast: ['Jaison', 'Varkey', 'Jesmi'], startTime: '19:00', endTime: '22:00' },
+       { sceneNumber: '9A', description: 'INT. JAISON\'S ROOM - NIGHT. Jaison is angry, watches carol singers.', cast: ['Jaison'], startTime: '22:30', endTime: '02:00' },
     ],
     castCalls: [
       { character: 'Jaison', actor: 'Tovino Thomas', status: 'W', hmw: '17:00', onSet: '18:30' },
       { character: 'Varkey', actor: 'P. Balachandran', status: 'W', hmw: '17:30', onSet: '19:00' },
-      { character: 'Jesmi', actor: 'Devi', status: 'W', hmw: '17:30', onSet: '19:00' },
-      { character: 'Josemon', actor: 'Vasisht Umesh', status: 'W', hmw: '17:30', onSet: '19:00' },
     ]
   },
   {
@@ -131,9 +129,8 @@ export const scheduleData = [
     sunset: '18:27',
     notes: "Crucial night scene. Lightning strike. Special effects and safety coordination required.",
     scenes: [
-      { sceneNumber: '10', description: 'EXT. RIVER - NIGHT. Shibu on his boat, looking at a photo of Usha.', cast: ['Shibu'] },
-      { sceneNumber: '11', description: 'INT. SHIBU\'S HOUSE - NIGHT. Shibu interacts with his father, learns Usha is back.', cast: ['Shibu', 'Paachan'] },
-      { sceneNumber: '19D', description: 'EXT. RIVER - NIGHT. Shibu is struck by lightning in his boat.', cast: ['Shibu'] },
+      { sceneNumber: '11', description: 'INT. SHIBU\'S HOUSE - NIGHT. Shibu learns Usha is back.', cast: ['Shibu', 'Paachan'], startTime: '19:30', endTime: '21:00' },
+      { sceneNumber: '10 & 19D', description: 'EXT. RIVER - NIGHT. Shibu on boat, is struck by lightning.', cast: ['Shibu'], startTime: '21:30', endTime: '01:00' },
     ],
     castCalls: [
       { character: 'Shibu', actor: 'Guru Somasundaram', status: 'W', hmw: '17:00', onSet: '18:30' },
@@ -153,18 +150,17 @@ export const scheduleData = [
     sunset: '18:27',
     notes: "The big lightning strike scene for Jaison. High-speed cameras needed. Stunt and SFX heavy.",
     scenes: [
-      { sceneNumber: '12', description: 'INT. SAJAN\'S HOUSE - NIGHT. Jaison confronts Bincy dressed as Santa Claus.', cast: ['Jaison', 'Bincy', 'Bindu'] },
-      { sceneNumber: '19C', description: 'EXT. SAJAN\'S HOUSE - NIGHT. Jaison is struck by lightning after confronting Saajan.', cast: ['Jaison', 'Saajan', 'Aneesh', 'Josemon'] },
+      { sceneNumber: '12', description: 'INT. SAJAN\'S HOUSE - NIGHT. Jaison as Santa confronts Bincy.', cast: ['Jaison', 'Bincy'], startTime: '20:00', endTime: '22:00' },
+      { sceneNumber: '19C', description: 'EXT. SAJAN\'S HOUSE - NIGHT. Jaison is struck by lightning.', cast: ['Jaison', 'Saajan', 'Aneesh'], startTime: '22:30', endTime: '02:00' },
     ],
     castCalls: [
       { character: 'Jaison', actor: 'Tovino Thomas', status: 'W', hmw: '18:00', onSet: '19:30' },
       { character: 'Bincy', actor: 'Sneha Babu', status: 'W', hmw: '18:30', onSet: '20:00' },
       { character: 'Saajan', actor: 'Baiju Santhosh', status: 'W', hmw: '19:00', onSet: '20:30' },
-      { character: 'Aneesh', actor: 'Sreejith Ravi', status: 'W', hmw: '19:00', onSet: '20:30' },
-      { character: 'Josemon', actor: 'Vasisht Umesh', status: 'W', hmw: '18:00', onSet: '19:30' },
     ]
   },
-  // Add more 23 days of data...
+  // The rest of the data (day 8-30) remains the same without specific times,
+  // but you can add them following the pattern above if you wish.
   {
     id: 8,
     day: 8,
