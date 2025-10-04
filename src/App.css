@@ -1,0 +1,324 @@
+/* --- Global Styles & Variables --- */
+:root {
+  --background-primary: #f0f2f5;
+  --background-secondary: #ffffff;
+  --text-primary: #1c1e21;
+  --text-secondary: #65676b;
+  --accent-blue: #0866ff;
+  --accent-orange: #f59e0b;
+  --accent-green: #31a24c;
+  --border-color: #e4e6eb;
+  --shadow-light: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* --- Main App Container --- */
+.App {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  background-color: var(--background-secondary);
+  border-radius: 12px;
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+}
+
+/* --- Header & View Toggles --- */
+.header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.view-toggles {
+  display: flex;
+  gap: 8px;
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-btn:hover {
+  background-color: #f2f2f2;
+}
+
+.toggle-btn.active {
+  background-color: var(--accent-blue);
+  color: white;
+  border-color: var(--accent-blue);
+}
+
+/* --- Horizontal Scroll Container --- */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 24px;
+  gap: 16px;
+  scroll-snap-type: x mandatory;
+}
+
+/* Custom Scrollbar */
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* --- Day & Week Cards --- */
+.day-card, .week-card {
+  flex: 0 0 280px; /* Fixed width */
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  scroll-snap-align: start;
+}
+
+.day-card:hover, .week-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.card-header span {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.card-info {
+  font-size: 14px;
+}
+
+.card-info p {
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.card-info strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.info-badge {
+  background-color: var(--accent-orange);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* --- Detail View (Call Sheet & Week Sheet) --- */
+.detail-view {
+  padding: 24px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-secondary);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #f2f2f2;
+}
+
+.detail-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.detail-header h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent-blue);
+}
+
+.detail-header p {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.detail-box {
+  background-color: #f9f9f9;
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.detail-box h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.detail-box p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+.detail-section {
+  margin-bottom: 32px;
+}
+
+.detail-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--accent-blue);
+  padding-bottom: 8px;
+}
+
+/* --- Scheduled Scenes List --- */
+.scene-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.scene-item {
+  background-color: #f9f9f9;
+  border-left: 4px solid var(--accent-orange);
+  padding: 12px 16px;
+  border-radius: 4px;
+}
+.scene-item p {
+  margin: 0;
+}
+.scene-item-header {
+  font-weight: 700;
+  font-size: 16px;
+}
+.scene-item-cast {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* --- Cast Call Table --- */
+.cast-call-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.cast-call-table th, .cast-call-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cast-call-table th {
+  background-color: #f9f9f9;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.cast-call-table td .status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 12px;
+  color: white;
+}
+
+.status-wo {
+  background-color: var(--accent-green);
+}
+
+.status-sw {
+  background-color: var(--accent-orange);
+}
+
+.status-h {
+  background-color: #dc3545;
+}
+
+/* --- Detailed Week Sheet Specifics --- */
+.week-sheet-day-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
